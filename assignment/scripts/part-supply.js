@@ -21,6 +21,7 @@ console.log('3. Access the second value of supplyChanges:',secondItem);
 //    Remove it from the array and store it inside a new variable called 'removedItem'.
 let removedItem = supplyChanges.pop();
 console.log('4. Remove the last value from supplyChanges:', removedItem);
+console.log('Supply:', supplyChanges);
 
 // 5. A delivery of 25 more parts arrived. Add the value 25 to the end of the array
 supplyChanges.push(25);
@@ -33,22 +34,53 @@ console.log('5. Add the value 25 into supplyChanges.', supplyChanges);
 //      - If the value is a positive number, push it into the 'positives' array.
 //      - If the value is a negative number, push it into the 'negatives' array.
 //      - If the value is a zero, push it into the 'zeroes' array.
+let positives = [];
+let negatives = [];  
+let zeroes = [];
+for (let i = 0; i < supplyChanges.length; i++){
+  if (supplyChanges[i] > 0){
+    positives.push(supplyChanges[i]);
+  } else if (supplyChanges[i] < 0){
+    negatives.push(supplyChanges[i]);
+  } else if(supplyChanges[i] === 0) {
+    zeroes.push(supplyChanges[i]);
+  }
+}
 console.log('6. Looping through supplyChanges to populate arrays with positive, negative, and zero values:');
-
-
-
+console.log('positives:', positives);
+console.log('negatives:', negatives);
+console.log('zeroes', zeroes);
 
 // ***** STRETCH GOALS *********************************************
 // 7. Rewrite the 'for' loop from #6 as a 'for...of' loop. Instead of 'positives',
 //    'negatives', and 'zeroes', create three new arrays named 'stretchPositives',
 //    'stretchNegatives', and 'stretchZeroes'. 
 console.log('7. Looping through supplyChanges to populate more arrays with positive, negative, and zero values:');
-
+let stretchPositives = [];
+let stretchNegatives = [];  
+let stretchZeroes = [];
+for(let changes of supplyChanges){
+  if(changes > 0){
+  stretchPositives.push(changes);
+} else if (changes < 0){
+  stretchNegatives.push(changes);
+} else if(changes === 0) {
+  stretchZeroes.push(changes);
+}
+}
+console.log('stretchPositives:', stretchPositives);
+console.log('stretchNegatives:', stretchNegatives);
+console.log('stretchZeroes', stretchZeroes);
 
 // 8. Create a variable called 'totalParts' and assign it a value of 0.
 //    Then, write a loop that adds each value of the 'supplyChanges'
 //    array to the 'totalParts' variable.
-console.log('8. Looping through supplyChanges to calculate the sum:');
+let totalParts = 0;
+for (let i = 0; i < supplyChanges.length; i++) {
+  totalParts += supplyChanges[i];
+}
+console.log('8. Looping through supplyChanges to calculate the sum:', this.totalParts);
+console.log('Supply:', supplyChanges);
 
 
 // 9. We have a large stash of parts in our warehouse that we 
